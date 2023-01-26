@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+        <title>Qu!zz | Krushna Bajaj</title>
+
+
+        <link rel="stylesheet" href="./assets/css/quiz.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/all.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://raw.githubusercontent.com/daneden/animate.css/master/animate.css">
+</head>
+
+<body>
+    <nav>
+        <div class="logo">
+            <p>Qu!zz</p>
+        </div>
+        <ul>
+            <li><a href="./home.html">Home</a></li>
+            <li><a href="./quiz.html">Quiz</a></li>
+            <li><a href="./about.html">About</a></li>
+            <li><a href="./contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+
+        <div id="mainDiv">
+            <div id="loaderDiv">
+                <div id="loader" class="spinner-border"></div>
+            </div>  
+
+
+            <div id="mainPanel" style="display: none;">
+                <div id="panelInner">
+                    <div id="header">
+                        <h3>QUESTIONS</h3>
+                    </div>
+                    <div id="questionsBody">
+                        <ul id="questionsUl">
+    
+                        </ul>
+                    </div>
+                    <div id="addBtnDiv">
+                        <button id="addBtn" class="btn btn-success fa fa-plus" onclick="addQuestion()"> Add Que</button>
+                        <button id="delAllBtn" class="btn btn-danger fa fa-trash" onclick="dellAll()">  Delete all</button>
+                        <button class="btn btn-danger homeBtn" onclick="homePage()">Confirm</button>
+                    </div>
+                </div>
+            </div>
+    
+
+            <br><button class="btn btn-success startBtn" id="startBtn" onclick="startQuiz()">Start Quiz</button><br>
+            <br><button class="btn btn-success adminBtn" id="adminBtn" onclick="adminPanel()">Admin Panel</button><br>
+            
+
+            <div id="mainBody" style="display: none;">
+                <div id="quiz">
+                    <div id="quizHeader"></div>
+                    <div id="quizBody"></div>
+                </div>
+                <button class="btn btn-danger exitBtn" id="exitBtn" onclick="appendResult()">Finish Quiz</button>
+        </div>
+
+
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.20.0/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.20.0/firebase-database.js"></script>
+        <script defer src="./assets/js/quiz.js"></script>
+        
+        <script>
+        var firebaseConfig = {
+            apiKey: "AIzaSyADzt3Lqvf4vDaCz1OP597ZK-HnkNzxhFE",
+            authDomain: "quizapp-4cecf.firebaseapp.com",
+            databaseURL: "https://quizapp-4cecf.firebaseio.com",
+            projectId: "quizapp-4cecf",
+            storageBucket: "quizapp-4cecf.appspot.com",
+            messagingSenderId: "176628194817",
+            appId: "1:176628194817:web:49603e2354f65d020fea00",
+            measurementId: "G-3ET99J8955"
+        };
+        firebase.initializeApp(firebaseConfig);
+        </script>
+
+
+</body>
+</html>
